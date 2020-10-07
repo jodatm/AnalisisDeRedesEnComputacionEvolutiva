@@ -1,4 +1,5 @@
-# Foobar
+# ANRECEV
+## Analizador de redes en computación evolutiva
 
 Esta herramienta permite realizar pruebas para la mejora de algoritmos de optimización mediante el curso de redes complejas.E n este trabajo se plantea el desarrollo de un mecanismo de control para una estrategia de computacion evolutiva guiado por una red compleja dinamica para mejorar el desempeño del algoritmo.
 
