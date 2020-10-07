@@ -154,9 +154,9 @@ else:
         promedio_temporal = sumatoria_temporal / numero_iteraciones        
         promedios.append(promedio_temporal)
         
-    print "\n"
-    print "Promedios de las iteraciones"
+    print ("\n")
+    print ("Promedios de las iteraciones")
     for i in range(0,number_of_generation): 
-        print "%.9f"%promedios[i]
+        print ("%.9f"%promedios[i])
     
 

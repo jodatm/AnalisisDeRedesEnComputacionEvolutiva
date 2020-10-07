@@ -1,3 +1,7 @@
+#Author: Joshua David Triana
+#Creation date Agosto 29 de 2019
+#Last edition date Agosto 29 de 2019
+#Description: Sphere function experiments
 import random
 
 import networkx as nx

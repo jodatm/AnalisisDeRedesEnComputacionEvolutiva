@@ -1,3 +1,7 @@
+#Author: Joshua David Triana
+#Creation date August 29th de 2019
+#Last edition date August 29th de 2019
+#Description: Ackley function experiments
 import random
 import math
 import networkx as nx
