@@ -70,4 +70,4 @@ ax.set_title(u'Estrategias swbest', fontsize=8)
 
 
 plt.show()
-plt.savefig("grafica.png")
+plt.savefig("Generadosw50.png")
