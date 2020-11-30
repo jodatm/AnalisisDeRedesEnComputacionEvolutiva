@@ -1,0 +1,128 @@
+('experiments: ', 0)
+('experiments: ', 1)
+('experiments: ', 2)
+('experiments: ', 3)
+('experiments: ', 4)
+('experiments: ', 5)
+('experiments: ', 6)
+('experiments: ', 7)
+('experiments: ', 8)
+('experiments: ', 9)
+('experiments: ', 10)
+('experiments: ', 11)
+('experiments: ', 12)
+('experiments: ', 13)
+('experiments: ', 14)
+('experiments: ', 15)
+('experiments: ', 16)
+('experiments: ', 17)
+('experiments: ', 18)
+('experiments: ', 19)
+('experiments: ', 20)
+('experiments: ', 21)
+('experiments: ', 22)
+('experiments: ', 23)
+('experiments: ', 24)
+('experiments: ', 25)
+('experiments: ', 26)
+('experiments: ', 27)
+('experiments: ', 28)
+('experiments: ', 29)
+('experiments: ', 30)
+('experiments: ', 31)
+('experiments: ', 32)
+('experiments: ', 33)
+('experiments: ', 34)
+('experiments: ', 35)
+('experiments: ', 36)
+('experiments: ', 37)
+('experiments: ', 38)
+('experiments: ', 39)
+('experiments: ', 40)
+('experiments: ', 41)
+('experiments: ', 42)
+('experiments: ', 43)
+('experiments: ', 44)
+('experiments: ', 45)
+('experiments: ', 46)
+('experiments: ', 47)
+('experiments: ', 48)
+('experiments: ', 49)
+('experiments: ', 50)
+('experiments: ', 51)
+('experiments: ', 52)
+('experiments: ', 53)
+('experiments: ', 54)
+('experiments: ', 55)
+('experiments: ', 56)
+('experiments: ', 57)
+('experiments: ', 58)
+('experiments: ', 59)
+('experiments: ', 60)
+('experiments: ', 61)
+('experiments: ', 62)
+('experiments: ', 63)
+('experiments: ', 64)
+('experiments: ', 65)
+('experiments: ', 66)
+('experiments: ', 67)
+('experiments: ', 68)
+('experiments: ', 69)
+('experiments: ', 70)
+('experiments: ', 71)
+('experiments: ', 72)
+('experiments: ', 73)
+('experiments: ', 74)
+('experiments: ', 75)
+('experiments: ', 76)
+('experiments: ', 77)
+('experiments: ', 78)
+('experiments: ', 79)
+('experiments: ', 80)
+('experiments: ', 81)
+('experiments: ', 82)
+('experiments: ', 83)
+('experiments: ', 84)
+('experiments: ', 85)
+('experiments: ', 86)
+('experiments: ', 87)
+('experiments: ', 88)
+('experiments: ', 89)
+('experiments: ', 90)
+('experiments: ', 91)
+('experiments: ', 92)
+('experiments: ', 93)
+('experiments: ', 94)
+('experiments: ', 95)
+('experiments: ', 96)
+('experiments: ', 97)
+('experiments: ', 98)
+('experiments: ', 99)
+
+
+Promedios de las iteraciones
+858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 858 [4.54187393e-06 4.52797413e-04 9.02516842e-04 1.35514736e-03
+ 1.80148840e-03 2.24395275e-03 2.68801451e-03 3.12963009e-03
+ 3.57300758e-03 4.01756763e-03 4.45994854e-03 4.90007639e-03
+ 5.34105778e-03 5.78035593e-03 6.21870041e-03 6.65500164e-03
+ 7.09131479e-03 7.53246069e-03 7.97005415e-03 8.40489388e-03
+ 8.84365559e-03 9.27913189e-03 9.71595287e-03 1.01519847e-02
+ 1.05876279e-02 1.10244274e-02 1.14618015e-02 1.18981004e-02
+ 1.23346925e-02 1.27731514e-02 1.32126546e-02 1.36480021e-02
+ 1.40853524e-02 1.45172000e-02 1.49504447e-02 1.53837037e-02
+ 1.58195257e-02 1.62585568e-02 1.66971517e-02 1.71340704e-02
+ 1.75716591e-02 1.80093360e-02 1.84464836e-02 1.88820052e-02
+ 1.93185186e-02 1.97592139e-02 2.01926231e-02 2.06283975e-02
+ 2.10648751e-02 2.15022469e-02 2.19428110e-02 2.23837686e-02
+ 2.28224421e-02 2.32619786e-02 2.36976981e-02 2.41326332e-02
+ 2.45679569e-02 2.50031686e-02 2.54377556e-02 2.58701873e-02
+ 2.63017535e-02 2.67350864e-02 2.71683192e-02 2.76043701e-02
+ 2.80383658e-02 2.84766650e-02 2.89142823e-02 2.93512845e-02
+ 2.97892165e-02 3.02248049e-02 3.06602907e-02 3.10957789e-02
+ 3.15315199e-02 3.19657993e-02 3.24005079e-02 3.28355122e-02
+ 3.32712984e-02 3.37065578e-02 3.41423678e-02 3.45821571e-02
+ 3.50221205e-02 3.54640651e-02 3.59102607e-02 3.63553524e-02
+ 3.67973781e-02 3.72366643e-02 3.76746941e-02 3.81159210e-02
+ 3.85617852e-02 3.90120029e-02 3.94552922e-02 3.99033689e-02
+ 4.03492641e-02 4.07934642e-02 4.12436056e-02 4.16918850e-02
+ 4.21371746e-02 4.25869107e-02 4.30361962e-02 4.34803843e-02]

@@ -1,0 +1,128 @@
+('experiments: ', 0)
+('experiments: ', 1)
+('experiments: ', 2)
+('experiments: ', 3)
+('experiments: ', 4)
+('experiments: ', 5)
+('experiments: ', 6)
+('experiments: ', 7)
+('experiments: ', 8)
+('experiments: ', 9)
+('experiments: ', 10)
+('experiments: ', 11)
+('experiments: ', 12)
+('experiments: ', 13)
+('experiments: ', 14)
+('experiments: ', 15)
+('experiments: ', 16)
+('experiments: ', 17)
+('experiments: ', 18)
+('experiments: ', 19)
+('experiments: ', 20)
+('experiments: ', 21)
+('experiments: ', 22)
+('experiments: ', 23)
+('experiments: ', 24)
+('experiments: ', 25)
+('experiments: ', 26)
+('experiments: ', 27)
+('experiments: ', 28)
+('experiments: ', 29)
+('experiments: ', 30)
+('experiments: ', 31)
+('experiments: ', 32)
+('experiments: ', 33)
+('experiments: ', 34)
+('experiments: ', 35)
+('experiments: ', 36)
+('experiments: ', 37)
+('experiments: ', 38)
+('experiments: ', 39)
+('experiments: ', 40)
+('experiments: ', 41)
+('experiments: ', 42)
+('experiments: ', 43)
+('experiments: ', 44)
+('experiments: ', 45)
+('experiments: ', 46)
+('experiments: ', 47)
+('experiments: ', 48)
+('experiments: ', 49)
+('experiments: ', 50)
+('experiments: ', 51)
+('experiments: ', 52)
+('experiments: ', 53)
+('experiments: ', 54)
+('experiments: ', 55)
+('experiments: ', 56)
+('experiments: ', 57)
+('experiments: ', 58)
+('experiments: ', 59)
+('experiments: ', 60)
+('experiments: ', 61)
+('experiments: ', 62)
+('experiments: ', 63)
+('experiments: ', 64)
+('experiments: ', 65)
+('experiments: ', 66)
+('experiments: ', 67)
+('experiments: ', 68)
+('experiments: ', 69)
+('experiments: ', 70)
+('experiments: ', 71)
+('experiments: ', 72)
+('experiments: ', 73)
+('experiments: ', 74)
+('experiments: ', 75)
+('experiments: ', 76)
+('experiments: ', 77)
+('experiments: ', 78)
+('experiments: ', 79)
+('experiments: ', 80)
+('experiments: ', 81)
+('experiments: ', 82)
+('experiments: ', 83)
+('experiments: ', 84)
+('experiments: ', 85)
+('experiments: ', 86)
+('experiments: ', 87)
+('experiments: ', 88)
+('experiments: ', 89)
+('experiments: ', 90)
+('experiments: ', 91)
+('experiments: ', 92)
+('experiments: ', 93)
+('experiments: ', 94)
+('experiments: ', 95)
+('experiments: ', 96)
+('experiments: ', 97)
+('experiments: ', 98)
+('experiments: ', 99)
+
+
+Promedios de las iteraciones
+1 2 4 6 10 10 11 11 12 12 14 17 20 22 22 22 23 25 25 26 27 28 30 32 33 34 35 36 37 37 39 40 40 41 42 44 46 47 48 49 52 53 55 55 57 58 59 59 59 60 61 61 62 63 63 64 65 66 68 68 69 69 70 71 71 72 72 73 73 75 78 78 79 79 80 81 83 85 87 87 87 88 90 92 93 96 97 98 99 101 101 101 102 104 107 108 108 110 111 112 [1.71494484e-05 2.89808035e-03 5.75029850e-03 8.59706402e-03
+ 1.14256835e-02 1.42558670e-02 1.71024299e-02 1.99631786e-02
+ 2.28398752e-02 2.57163739e-02 2.85896254e-02 3.14173484e-02
+ 3.42710972e-02 3.71136475e-02 3.99365544e-02 4.27417302e-02
+ 4.55797648e-02 4.83986592e-02 5.12322831e-02 5.40440083e-02
+ 5.68528461e-02 5.96560121e-02 6.24842787e-02 6.52892685e-02
+ 6.81047392e-02 7.09118414e-02 7.37420368e-02 7.65890884e-02
+ 7.94558191e-02 8.23376989e-02 8.52193928e-02 8.81159496e-02
+ 9.09624028e-02 9.37799478e-02 9.65894699e-02 9.94424725e-02
+ 1.02314160e-01 1.05193243e-01 1.08058441e-01 1.10923855e-01
+ 1.13749049e-01 1.16588995e-01 1.19400101e-01 1.22211790e-01
+ 1.25033019e-01 1.27862597e-01 1.30666635e-01 1.33486085e-01
+ 1.36311150e-01 1.39120240e-01 1.41951098e-01 1.44782820e-01
+ 1.47619674e-01 1.50441680e-01 1.53264599e-01 1.56089165e-01
+ 1.58955824e-01 1.61814969e-01 1.64665885e-01 1.67527680e-01
+ 1.70405772e-01 1.73253663e-01 1.76096127e-01 1.78964465e-01
+ 1.81825449e-01 1.84694834e-01 1.87560778e-01 1.90436046e-01
+ 1.93295074e-01 1.96158266e-01 1.99050388e-01 2.01943698e-01
+ 2.04798577e-01 2.07643957e-01 2.10482602e-01 2.13370900e-01
+ 2.16263726e-01 2.19175711e-01 2.22071624e-01 2.24989524e-01
+ 2.27903605e-01 2.30799305e-01 2.33681905e-01 2.36546800e-01
+ 2.39400098e-01 2.42269042e-01 2.45163996e-01 2.48085427e-01
+ 2.51000814e-01 2.53908720e-01 2.56810684e-01 2.59647999e-01
+ 2.62478893e-01 2.65323386e-01 2.68169987e-01 2.71033242e-01
+ 2.73908021e-01 2.76742089e-01 2.79580796e-01 2.82424335e-01]

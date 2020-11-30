@@ -4,10 +4,8 @@
 #Description: Backpack function experiments    
 import random
 from item import Item
-import networkx as nx
 import numpy as np
 import time
-import matplotlib.pyplot as pd
 
 ##########################################################################################
 # Codigo del Problema de la mochila tomado de: https://github.com/edmilsonrobson 
@@ -16,7 +14,6 @@ import matplotlib.pyplot as pd
 total_items = 80	
 ITEMS = [Item(random.randint(0,total_items),random.randint(0,total_items)) for x in range (0,total_items)]
 
-
 CAPACITY = 10*len(ITEMS)
 
 POP_SIZE = 50
@@ -24,10 +21,6 @@ POP_SIZE = 50
 GEN_MAX = 100
 
 START_POP_WITH_ZEROES = False
-
-rewiring = 0.3
-
-G = nx.generators.random_graphs.watts_strogatz_graph(POP_SIZE,3,rewiring)
 
 def fitness(target):    
     total_value = 0
@@ -41,10 +34,9 @@ def fitness(target):
             total_weight += ITEMS[index].weight
         index += 1
         
-    
-    if total_weight > CAPACITY:        
+    if total_weight > CAPACITY:
         return 0
-    else:        
+    else:
         return total_value
 
 def spawn_starting_population(amount):
@@ -52,7 +44,7 @@ def spawn_starting_population(amount):
 
 def spawn_individual():
     if START_POP_WITH_ZEROES:
-        return [random.randint(0,0) for x in range (0,len(ITEMS))]
+        return [0 for x in range (0,len(ITEMS))]
     else:
 		capacityInd = 0
 		individual = np.zeros( len(ITEMS))
@@ -65,7 +57,9 @@ def spawn_individual():
 					capacityInd = capacityInd + ITEMS[i].weight
 				else:
 					return individual
-
+        #[random.randint(0,1) for x in range (0,len(ITEMS))]
+		return individual
+		
 def mutate(target):    
     r = random.randint(0,len(target)-1)
     if target[r] == 1:
@@ -75,72 +69,64 @@ def mutate(target):
 
 def evolve_population(poblation):
     
-    pop = poblation
-    
-    mutation_chance = 0.08
-        
-    for i in range(0,len(pop)):
-        
-        candidato = pop[i]
-        vecinos=[]
-        for k in G[i]:            
-            vecinos.append(k)
-            
-        if(len(vecinos)>0):        
-            mejor_vecino = 0
-            puntaje_mejor_vecino = 0
-            
-            for k in G[i]:
-                
-                fitness_vecino = fitness(pop[k])                
-                if(fitness_vecino>puntaje_mejor_vecino):
-                    puntaje_mejor_vecino = fitness_vecino
-                    mejor_vecino = k        
-            
-            pareja = pop[mejor_vecino]
-            child = []
-            half = len(candidato)/2
-            child = candidato[:half] + pareja[half:] # from start to half from father, from half to end from mother
-            if mutation_chance > random.random():
-                mutate(child)
-            if fitness(child)>fitness(candidato):
-                pop[i]=child
-                G.add_edge(i,mejor_vecino)
+	pop = poblation
+	fitness_poblacion = []
+	mutation_chance = 0.08
+	for j in range(0, len(pop)):
+		fitness_temporal = fitness(pop[j])
+		fitness_poblacion.append(fitness_temporal)
+
+	for i in range(0,len(pop)):
+		candidato = pop[i]
+		posicion_pareja = 0
+		no_encontro_pareja = True  
+		if(sum(fitness_poblacion)==0):      
+			posicion_pareja = random.randint(0,len(pop)-1)
+		else:		
+			while(no_encontro_pareja):
+				maximus = sum(fitness_poblacion) 				
+				
+				pick = random.randint(fitness_poblacion[i], maximus) 
+				current = 0
+				
+				for j in range (0,len(fitness_poblacion)):
+					current += fitness_poblacion[j]
+					if current >= pick:
+						posicion_pareja = j
+						break
+				if(posicion_pareja != i):
+					no_encontro_pareja = False
+				
+		pareja = pop[posicion_pareja]
+		child = []
+		half = len(candidato)/2
+		child = candidato[:half] + pareja[half:] # from start to half from father, from half to end from mother
+
+		if mutation_chance > random.random():
+			mutate(child)
+		if fitness(child)>fitness(candidato):            
+			pop[i]=child        
 	return pop
 
-def updateG():
-    for j in range(0, POP_SIZE):            
-        aristas = G.adj[j]        
-        
-        vecinos=[]
-        for k in aristas:            
-            vecinos.append(k)
-                
-        for i in range(0,len(vecinos)):
-            if random.random() < rewiring:                
-                random_index = int(random.random()*POP_SIZE)                
-                G.remove_edge(j, vecinos[i])                
-                G.add_edge(j,random_index)
-    
 def main():
     generation = 0
     population = spawn_starting_population(POP_SIZE)
+
     fitness_generations = []
     start_time = time.time()
     times = []
  
     for g in range(0,GEN_MAX):
-		population = evolve_population(population)
-		times.append(time.time() - start_time)  
-		updateG()
-		fitness_mas_alto = 0
-
-		for i in range (0,len(population)):
-			if fitness(population[i])>fitness_mas_alto:
-				fitness_mas_alto = fitness(population[i])
-           
-		fitness_generations.append(fitness_mas_alto)
-		generation += 1
+        population = evolve_population(population)
+        times.append(time.time() - start_time)  
+        fitness_mas_alto = 0
+        
+        for i in range (0,len(population)):
+            if fitness(population[i])>fitness_mas_alto:
+                fitness_mas_alto = fitness(population[i])
+        
+        fitness_generations.append(fitness_mas_alto)
+        generation += 1
     return fitness_generations,times
 
 if __name__ == "__main__":
