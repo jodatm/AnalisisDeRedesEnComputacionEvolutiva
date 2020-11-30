@@ -20,7 +20,7 @@ POP_SIZE = 500
 
 GEN_MAX = 100
 
-START_POP_WITH_ZEROES = True
+START_POP_WITH_ZEROES = False
 
 def fitness(target):    
     total_value = 0
