@@ -4,19 +4,20 @@
 #Description: Backpack function experiments    
 import random
 from item import Item
-
+import numpy as np
+import time
 ##########################################################################################
 # Codigo del Problema de la mochila tomado de: https://github.com/edmilsonrobson 
 ##########################################################################################
 # 
-
-ITEMS = [Item(random.randint(0,30),random.randint(0,30)) for x in range (0,30)]
+number_items = 80
+ITEMS = [Item(random.randint(0,number_items),random.randint(0,number_items)) for x in range (0,number_items)]
 
 CAPACITY = 10*len(ITEMS)
 
 POP_SIZE = 50
 
-GEN_MAX = 200
+GEN_MAX = 100
 
 START_POP_WITH_ZEROES = False
 
@@ -44,9 +45,21 @@ def spawn_starting_population(amount):
 
 def spawn_individual():
     if START_POP_WITH_ZEROES:
-        return [random.randint(0,0) for x in range (0,len(ITEMS))]
+        return [0 for x in range (0,len(ITEMS))]
     else:
-        return [random.randint(0,1) for x in range (0,len(ITEMS))]
+		capacityInd = 0
+		individual = np.zeros( len(ITEMS))
+		individual = individual.tolist()
+		for i in range(0, len(ITEMS)):
+			status = random.randint(0,1) 
+			if status == 1:
+				if capacityInd + ITEMS[i].weight <= CAPACITY:
+					individual[i] = status
+					capacityInd = capacityInd + ITEMS[i].weight
+				else:
+					return individual
+        #[random.randint(0,1) for x in range (0,len(ITEMS))]
+		return individual
 
 def mutate(target):    
     r = random.randint(0,len(target)-1)
@@ -89,29 +102,46 @@ def evolve_population(pop):
     parents.extend(children)
     return parents
 
+
 def main():
     generation = 0
     population = spawn_starting_population(POP_SIZE)
+
     fitness_generations = []
-    for g in range(0,GEN_MAX):        
-        population = sorted(population, key=lambda x: fitness(x), reverse=True)        
+    start_time = time.time()
+    times = []
+ 
+    for g in range(0,GEN_MAX):
         population = evolve_population(population)
-        fitness_generations.append(fitness(population[0]))
+        times.append(time.time() - start_time)  
+        fitness_mas_alto = 0
+        
+        for i in range (0,len(population)):
+            if fitness(population[i])>fitness_mas_alto:
+                fitness_mas_alto = fitness(population[i])
+        
+        fitness_generations.append(fitness_mas_alto)
         generation += 1
-    return fitness_generations
+    return fitness_generations,times
 
 if __name__ == "__main__":
     number_experiments = 100
     promedios = []
     experiments = []
+    timess = []
+
     for i in range (0,number_experiments):
-        experiments.append(main())        
+		print("experiments: ",i)
+		response = main()
+		experiments.append(response[0])
+		timess.append(response[1])
     
     for i in range(0,GEN_MAX):
         sumatoria_temporal = 0
-        for j in range(0,number_experiments):            
+        for j in range(0,number_experiments):
             sumatoria_temporal = sumatoria_temporal + experiments[j][i]
-                
+        
+
         promedio_temporal = sumatoria_temporal / number_experiments        
         promedios.append(promedio_temporal)
     
@@ -120,5 +150,10 @@ if __name__ == "__main__":
     for i in range(0,GEN_MAX):
         #print(promedios[i])
         print str(promedios[i]),
+        
+    average_times = np.average(timess,axis=0)
+    print(average_times)       
+
+
         
     
