@@ -5,19 +5,23 @@
 import random
 from item import Item
 import networkx as nx
+import numpy as np
+import time
+import matplotlib.pyplot as pd
 
 ##########################################################################################
 # Codigo del Problema de la mochila tomado de: https://github.com/edmilsonrobson 
 ##########################################################################################
 # 
+total_items = 80	
+ITEMS = [Item(random.randint(0,total_items),random.randint(0,total_items)) for x in range (0,total_items)]
 
-ITEMS = [Item(random.randint(0,30),random.randint(0,30)) for x in range (0,30)]
 
 CAPACITY = 10*len(ITEMS)
 
 POP_SIZE = 50
 
-GEN_MAX = 200
+GEN_MAX = 100
 
 START_POP_WITH_ZEROES = False
 
@@ -50,7 +54,20 @@ def spawn_individual():
     if START_POP_WITH_ZEROES:
         return [random.randint(0,0) for x in range (0,len(ITEMS))]
     else:
-        return [random.randint(0,1) for x in range (0,len(ITEMS))]
+		capacityInd = 0
+		individual = np.zeros( len(ITEMS))
+		individual = individual.tolist()
+		for i in range(0, len(ITEMS)):
+			if capacityInd <= CAPACITY:
+				status = random.randint(0,1) 
+				individual[i] = status
+				
+				if status == 1:
+					capacityInd = capacityInd + ITEMS[i].weight
+			else:
+				return individual
+        #[random.randint(0,1) for x in range (0,len(ITEMS))]
+		return individual
 
 def mutate(target):    
     r = random.randint(0,len(target)-1)
@@ -112,9 +129,12 @@ def main():
     generation = 0
     population = spawn_starting_population(POP_SIZE)
     fitness_generations = []
-    
+    start_time = time.time()
+    times = []
+ 
     for g in range(0,GEN_MAX):
         population = evolve_population(population)
+        times.append(time.time() - start_time)  
         updateG()
         fitness_mas_alto = 0
         
@@ -124,14 +144,19 @@ def main():
         
         fitness_generations.append(fitness_mas_alto)
         generation += 1
-    return fitness_generations
+    return fitness_generations,times
 
 if __name__ == "__main__":
     number_experiments = 100
     promedios = []
     experiments = []
+    timess = []
+
     for i in range (0,number_experiments):
-        experiments.append(main())        
+		print("experiments: ",i)
+		response = main()
+		experiments.append(response[0])
+		timess.append(response[1])
     
     for i in range(0,GEN_MAX):
         sumatoria_temporal = 0
@@ -147,4 +172,7 @@ if __name__ == "__main__":
     for i in range(0,GEN_MAX):
         #print(promedios[i])
         print str(promedios[i]),
+        
+    average_times = np.average(timess,axis=0)
+    print(average_times)
         
