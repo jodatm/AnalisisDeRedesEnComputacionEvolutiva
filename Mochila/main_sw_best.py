@@ -19,7 +19,7 @@ ITEMS = [Item(random.randint(0,total_items),random.randint(0,total_items)) for x
 
 CAPACITY = 10*len(ITEMS)
 
-POP_SIZE = 50
+POP_SIZE = 500
 
 GEN_MAX = 100
 
@@ -131,11 +131,13 @@ def main():
  
     for g in range(0,GEN_MAX):
 		population = evolve_population(population)
+
 		times.append(time.time() - start_time)  
 		updateG()
 		fitness_mas_alto = 0
 
 		for i in range (0,len(population)):
+
 			if fitness(population[i])>fitness_mas_alto:
 				fitness_mas_alto = fitness(population[i])
            
